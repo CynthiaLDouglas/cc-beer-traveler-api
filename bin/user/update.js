@@ -17,4 +17,17 @@ const userInputId = process.argv[2]
 const userInputKey = process.argv[3]
 const userInputValue = process.argv[4]
 
-// node bin/person/update.js  db938d12087a9c38ca27b7792238da3b
+// node bin/person/update.js  db938d12087a9c38ca27b7792238da3b 'firstName' 'Samuel'
+
+db.once('open', function () {
+  User.findById(userInputId)
+    .then(user => {
+      user[userInputKey] = userInputValue
+      return user.save()
+    })
+    .then(user => {
+      console.log(user.toJSON)
+    })
+    .catch(console.error)
+    .finally(() => db.close())
+})
