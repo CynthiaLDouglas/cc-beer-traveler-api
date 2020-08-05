@@ -50,7 +50,7 @@ router.get('/posts/:id', requireToken, (req, res, next) => {
   Post.findById(req.params.id)
     .then(handle404)
     // if `findById` is succesful, respond with 200 and "example" JSON
-    .then(post => res.status(200).json({ post: post.toObject() }))
+    .then(post => res.status(200).json({ post: post }))
     // if an error occurs, pass it to the handler
     .catch(next)
 })
