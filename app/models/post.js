@@ -20,7 +20,7 @@ const postSchema = new mongoose.Schema({
   },
   content: {
     type: String,
-    required: true,git s
+    required: true,
     unique: true
   },
   owner: {
