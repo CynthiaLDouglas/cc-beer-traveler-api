@@ -3,7 +3,8 @@ const mongoose = require('mongoose')
 const postSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   placeName: {
     type: String,
@@ -19,7 +20,7 @@ const postSchema = new mongoose.Schema({
   },
   content: {
     type: String,
-    required: true,
+    required: true,git s
     unique: true
   },
   owner: {
