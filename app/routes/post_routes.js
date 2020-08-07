@@ -112,4 +112,16 @@ router.delete('/posts/:id', requireToken, (req, res, next) => {
     .catch(next)
 })
 
+// // SHOW by Title
+// // GET /examples/5a7db6c74d55bc51bdf39793
+// router.get('/posts/:title', requireToken, (req, res, next) => {
+//   // req.params.id will be set based on the `:id` in the route
+//   Post.findOne(req.params.id)
+//     .then(handle404)
+//     // if `findById` is succesful, respond with 200 and "example" JSON
+//     .then(post => res.status(200).json({ post: post.toObject() }))
+//     // if an error occurs, pass it to the handler
+//     .catch(next)
+// })
+
 module.exports = router

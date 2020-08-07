@@ -1,5 +1,30 @@
 const mongoose = require('mongoose')
 
+const beerSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  style: {
+    type: String,
+    required: true
+  },
+  abv: {
+    type: Number,
+    required: false
+  },
+  ibu: {
+    type: Number,
+    required: false,
+    min: 5,
+    max: 120
+  },
+  descrip: {
+    type: String,
+    required: false
+  }
+})
+
 const postSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -12,11 +37,11 @@ const postSchema = new mongoose.Schema({
   },
   cityLoc: {
     type: String,
-    required: false
+    required: true
   },
   stateLoc: {
     type: String,
-    required: false
+    required: true
   },
   content: {
     type: String,
@@ -28,12 +53,11 @@ const postSchema = new mongoose.Schema({
     ref: 'User',
     required: true
   },
+  beers: beerSchema,
   // image: {
   //   type: String,
   //   required: true
   // },
-  // beer: beer,
-  // reference user here
   token: String
 }, {
   timestamps: true
