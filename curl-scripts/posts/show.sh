@@ -6,6 +6,11 @@ URL_PATH="/posts/"
 curl "${API}${URL_PATH}${ID}" \
   --include \
   --request GET \
-  --header "Authorization: Bearer ${TOKEN}"
-
+  --header "Authorization: Bearer ${TOKEN}" \
+  --data '{
+      "post": {
+        "title": "'"${TITLE}"'",
+      }
+    }'
+      
 echo
