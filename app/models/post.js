@@ -19,7 +19,7 @@ const beerSchema = new mongoose.Schema({
     min: 5,
     max: 120
   },
-  descrip: {
+  description: {
     type: String,
     required: false
   }
@@ -53,7 +53,7 @@ const postSchema = new mongoose.Schema({
     ref: 'User',
     required: true
   },
-  beers: beerSchema,
+  beers: [beerSchema],
   // image: {
   //   type: String,
   //   required: true
