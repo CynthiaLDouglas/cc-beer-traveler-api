@@ -48,12 +48,12 @@ const postSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
+  beers: [beerSchema],
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true
   },
-  beers: [beerSchema],
   // image: {
   //   type: String,
   //   required: true
