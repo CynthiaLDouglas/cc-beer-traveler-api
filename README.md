@@ -38,7 +38,7 @@ This application allows the user to read, create, update and delete posts.Over t
 - Would like to eventually ....
   - reorder posts to list from newest to oldest
   - on sign-in, most recent posts on display
-  - add images to posts
+  - add images to posts when updating or creating
   - use title to search for posts
   - There will be two types of users. One, the blogger, will be able to manage the site, the other, the followers, will be able to engage with content through commenting and favoriting posts.
 
